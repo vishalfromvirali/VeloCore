@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1 >Welcome!</h1>
+    <p>You have successfully logged in.</p>
+
+    <form method="POST" action="/coupon_validate" >
+        <label >coupon code</label><br>
+        <input type="text" name="coupon_code" required><br>
+        <input type="submit" value="activate">
+        
+    </form>
+    {% if f=='True' %}
+    {% if flag =='True' %}
+    <h1 style="color: green;">coupon_validated successfully</h1>
+    {% else %}
+    <h1 style="color: red;"> coupon_validated wrong code or aldready used</h1>
+    {% endif %}
+    <a href="/"><button>login page</button></a>
+    {% endif %}
+    <form action="/logout">
+        <input type="submit" value="logout">
+    </form>
+
+</body>
+</html>
